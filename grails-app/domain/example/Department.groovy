@@ -8,7 +8,7 @@ class Department {
 
     static constraints = {
         name unique: true, blank: false, size: 2..100
-        headDepartment nullable: false, unique: true
+        headDepartment nullable: false, unique: true // or not unique
     }
     static belongsTo = HeadDepartment
     // начальники - Employee (сделать связь, однако таблицы создаются одновременно)

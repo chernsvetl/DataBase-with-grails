@@ -1,9 +1,12 @@
 package db
 
+import example.Brigade
 import example.Department
+import example.FlightDelay
 import example.HeadDepartment
 import example.Human
 import example.Passenger
+import example.PlaneType
 import example.Town
 
 
@@ -11,6 +14,7 @@ class BootStrap {
 
     def init = { servletContext ->
 
+        // people
         Human human1 = new Human(
          fullName: "Луговая Мария Петровна", birthday: '1984-11-22',  gender: "жен.", childrenNumber: 1
         ).save()
@@ -174,7 +178,7 @@ class BootStrap {
                 fullName: "Гаврилова Варвара Михайловна", birthday: '1968-11-22',  gender: "жен.", childrenNumber: 0
         ).save()
 
-
+        // passengers
        Passenger passenger1 =  new Passenger(human: human1).save()
        Passenger passenger2 =  new Passenger(human: human2).save()
        Passenger passenger3 =  new Passenger(human: human3).save()
@@ -186,6 +190,7 @@ class BootStrap {
        Passenger passenger9 =  new Passenger(human: human9).save()
        Passenger passenger10 =  new Passenger(human: human10).save()
 
+        // head-departments
         HeadDepartment headDepartment1 = new HeadDepartment(human:human34).save()
         HeadDepartment headDepartment2 = new HeadDepartment(human:human35).save()
         HeadDepartment headDepartment3 = new HeadDepartment(human:human36).save()
@@ -194,21 +199,57 @@ class BootStrap {
         HeadDepartment headDepartment6 = new HeadDepartment(human:human39).save()
         HeadDepartment headDepartment7 = new HeadDepartment(human:human40).save()
 
+        //towns
         Town town1 = new Town(name: "Екатеринбург", distance: 150).save()
         Town town2 = new Town(name:"Москва", distance:340).save()
         Town town3 = new Town(name:"Мюнхен",distance: 501).save()
         Town town4 = new Town(name:"Алматы", distance:79).save()
         Town town5 = new Town(name:"Красноярск", distance:5).save()
 
+        //departments
         Department department1 = new Department(name:  "служба летная", headDepartment: headDepartment1).save()
-        Department department2 = new Department(name:  "служба летная", headDepartment: headDepartment2).save()
-        Department department3 = new Department(name:  "служба летная", headDepartment: headDepartment3).save()
-        Department department4 = new Department(name:  "служба летная", headDepartment: headDepartment4).save()
-        Department department5 = new Department(name:  "служба летная", headDepartment: headDepartment5).save()
-        Department department6 = new Department(name:  "служба летная", headDepartment: headDepartment6).save()
-        Department department7 = new Department(name:  "служба летная", headDepartment: headDepartment7).save()
+        Department department2 = new Department(name:  "служба техническая", headDepartment: headDepartment2).save()
+        Department department3 = new Department(name:  "служба обслуживающая", headDepartment: headDepartment3).save()
+        Department department4 = new Department(name:  "служба диспетчерская", headDepartment: headDepartment4).save()
+        Department department5 = new Department(name:  "служба кассового обслуживания", headDepartment: headDepartment5).save()
+        Department department6 = new Department(name:  "служба безопасности", headDepartment: headDepartment6).save()
+        Department department7 = new Department(name:  "служба справочная", headDepartment: headDepartment7).save()
+
+        // brigades
+        Brigade brigade1 = new Brigade(name: "pilot-1", department: department1).save()
+        Brigade brigade2 = new Brigade(name: "pilot-2", department: department1).save()
+        Brigade brigade3 = new Brigade(name: "pilot-3", department: department1).save()
+        Brigade brigade4 = new Brigade(name: "pilot-4", department: department1).save()
+        Brigade brigade5 = new Brigade(name: "pilot-5", department: department1).save()
+        Brigade brigade6 = new Brigade(name: "tech-1", department: department2).save()
+        Brigade brigade7 = new Brigade(name: "tech-2", department: department2).save()
+        Brigade brigade8 = new Brigade(name: "tech-3", department: department2).save()
+        Brigade brigade9 = new Brigade(name: "tech-4", department: department2).save()
+        Brigade brigade10 = new Brigade(name: "tech-5", department: department2).save()
+        Brigade brigade11 = new Brigade(name: "serving-1", department: department3).save()
+        Brigade brigade12 = new Brigade(name: "serving-2", department: department3).save()
+        Brigade brigade13 = new Brigade(name: "serving-3", department: department3).save()
+        Brigade brigade14 = new Brigade(name: "serving-4", department: department3).save()
+        Brigade brigade15 = new Brigade(name: "serving-5", department: department3).save()
+        Brigade brigade16 = new Brigade(name: "dispatcher-1", department: department4).save()
+        Brigade brigade17 = new Brigade(name: "dispatcher-1", department: department4).save()
+        Brigade brigade18 = new Brigade(name: "cash-1", department: department5).save()
+        Brigade brigade19 = new Brigade(name: "cash-2", department: department5).save()
+        Brigade brigade20 = new Brigade(name: "secure-1", department: department6).save()
+        Brigade brigade21 = new Brigade(name: "secure-2", department: department6).save()
+        Brigade brigade22 = new Brigade(name: "help-1", department: department7).save()
+        Brigade brigade23 = new Brigade(name: "help-2", department: department7).save()
 
 
+        // plane type
+        PlaneType planetype1 = new PlaneType(name: "Airbus A920", capacity: 10, speed: 500).save()
+        PlaneType planetype2 = new PlaneType(name: "Airbus A640", capacity: 9, speed: 500).save()
+        PlaneType planetype3 = new PlaneType(name: "Boeing-b17", capacity: 8, speed: 900).save()
+        PlaneType planetype4 = new PlaneType(name: "Airbus A320", capacity: 10, speed: 800).save()
+        PlaneType planetype5 = new PlaneType(name: "ИЛ-96", capacity: 9, speed: 400).save()
+
+        // delay reason
+        // ...
 
     }
 
