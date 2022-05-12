@@ -6,6 +6,7 @@ import example.FlightDelay
 import example.HeadDepartment
 import example.Human
 import example.Passenger
+import example.Plane
 import example.PlaneType
 import example.Town
 
@@ -248,9 +249,18 @@ class BootStrap {
         PlaneType planetype4 = new PlaneType(name: "Airbus A320", capacity: 10, speed: 800).save()
         PlaneType planetype5 = new PlaneType(name: "ИЛ-96", capacity: 9, speed: 400).save()
 
-        // delay reason
-        // ...
+        // plane
+        Plane plane1 = new Plane(typeId: 1, technicalBrigade: 6, pilotBrigade: 1, serviceBrigade: 11,startUsingDate: '2003-06-05').save()
+        Plane plane2 = new Plane(typeId: 2, technicalBrigade: 7, pilotBrigade: 2, serviceBrigade: 12,startUsingDate: '2009-09-05').save()
+        Plane plane3 = new Plane(typeId: 3, technicalBrigade: 8, pilotBrigade: 3, serviceBrigade: 13,startUsingDate: '2008-12-03').save()
+        Plane plane4 = new Plane(typeId: 4, technicalBrigade: 9, pilotBrigade: 4, serviceBrigade: 14,startUsingDate: '2006-03-05').save()
+        Plane plane5 = new Plane(typeId: 5, technicalBrigade: 10, pilotBrigade: 5, serviceBrigade: 15,startUsingDate: '2001-11-22').save()
 
+        PlaneType typeId
+        Brigade technicalBrigade
+        Brigade pilotBrigade
+        Brigade serviceBrigade
+        Date startUsingDate
     }
 
 

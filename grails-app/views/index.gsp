@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcome to Grails</title>
+    <title>Welcome to Airport system!</title>
 </head>
 <body>
 <content tag="nav">
@@ -52,13 +52,12 @@
 <div id="content" role="main">
     <div class="container">
         <section class="row colset-2-its">
-            <h1>Welcome to Grails</h1>
+            <h1>Welcome to Airport system!</h1>
 
             <p>
-                Congratulations, you have successfully started your first Grails application! At the moment
-                this is the default page, feel free to modify it to either redirect to a controller or display
-                whatever content you may choose. Below is a list of controllers that are currently deployed in
-                this application, click on each to execute its default action:
+                Congratulations, you have successfully logged in to the airport's website. Below you
+                can find the information you are interested in using controllers. In Quaries you can
+                find the most popular requests. Wish you a good time on our website.
             </p>
 
             <div id="controllers" role="navigation">

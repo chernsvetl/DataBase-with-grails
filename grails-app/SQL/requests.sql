@@ -39,6 +39,7 @@ WHERE salary>200000
 ORDER BY id ASC;
 
 /* Оконные функции Сравнить различные рейсы по стоимости и найти максимальную цену за билет на рейс */
+/* distinct ? */
 SELECT id, flight_id, price,
        MAX(price) OVER (PARTITION BY flight_id) as max_ticket_price
 FROM ticket
