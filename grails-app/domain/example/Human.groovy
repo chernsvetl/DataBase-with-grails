@@ -5,7 +5,7 @@ class Human {
 
     String fullName
     Date birthday
-    String gender
+    Gender gender
     Integer childrenNumber
 
     //static OneToOne = Passenger
@@ -14,10 +14,9 @@ class Human {
     static constraints = {
         fullName  blank: false, size: 2..100
         birthday nullable: false
-        gender nullable: false, size: 4..4
+        gender blank: false, size: 2..10
         childrenNumber nullable: false, min: 0
     }
-
 
 }
 

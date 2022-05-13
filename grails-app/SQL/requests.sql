@@ -34,7 +34,7 @@ order by id;
 
 /* C фильтрацией и сортировкой. Вывести количество детей у работников, чьи зарплаты выше 200000 */
 
-SELECT employee.id, number_of_children from employee INNER JOIN human h on h.id = employee.id
+SELECT employee.id, childrennumber from employee INNER JOIN human h on h.id = employee.id
 WHERE salary>200000
 ORDER BY id ASC;
 

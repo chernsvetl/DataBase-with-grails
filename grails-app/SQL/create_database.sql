@@ -2,10 +2,10 @@
 create table human
 (
     id bigserial primary key,
-    fio varchar(100) not null,
+    fullName varchar(100) not null,
     birthday date not null,
     gender varchar(8) not null,
-    number_of_children bigint
+    childrenNumber bigint
 );
 
 create table head_department
@@ -28,7 +28,6 @@ create table brigade
     name varchar(100) not null unique,
     department_id bigint not null references department on delete cascade
 );
-
 
 create table employee
 (
