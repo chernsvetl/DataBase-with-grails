@@ -8,4 +8,5 @@ class Town {
      name nullable: false, blank: false, maxSize: 50
      distance nullable: false
     }
+
 }

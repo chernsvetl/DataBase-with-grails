@@ -1,11 +1,13 @@
 package example
 
+import org.hibernate.mapping.ManyToOne
+
 class Passenger {
     Human human
-    //static belongsTo = Human
-
+    //static hasMany = [ticketId:Ticket]
+    //static ManyToOne = [human:Human]
+    //static belongsTo = [human:Human]
     static constraints = {
-        //human unique: true
+
     }
-    static belongsTo = Human
 }

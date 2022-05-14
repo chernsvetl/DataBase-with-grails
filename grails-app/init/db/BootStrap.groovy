@@ -26,9 +26,11 @@ class BootStrap {
         Gender female = new Gender(name : "женский")
 
         // people
+
         Human human1 = new Human(
          fullName: "Луговая Мария Петровна", birthday: '1984-11-22',  gender: female, childrenNumber: 1
         ).save()
+
         Human human2 = new Human(
                 fullName: "Петров Виктор Константинович", birthday: '2011-11-22',  gender: male, childrenNumber: 0
         ).save()

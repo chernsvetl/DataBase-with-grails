@@ -2,7 +2,7 @@ package example
 
 
 class Human {
-
+   // Passenger passenger
     String fullName
     Date birthday
     Gender gender
@@ -10,6 +10,7 @@ class Human {
 
     //static OneToOne = Passenger
     //static OneToOne = HeadDepartment
+    //static belongsTo = [id:Passenger]
 
     static constraints = {
         fullName  blank: false, size: 2..100
