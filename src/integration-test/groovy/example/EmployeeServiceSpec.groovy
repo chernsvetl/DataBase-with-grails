@@ -14,11 +14,11 @@ class EmployeeServiceSpec extends Specification {
 
     private Long setupData() {
         // TODO: Populate valid domain instances and return a valid ID
-        //new Employee(...).save(flush: true, failOnError: true)
-        //new Employee(...).save(flush: true, failOnError: true)
-        //Employee employee = new Employee(...).save(flush: true, failOnError: true)
-        //new Employee(...).save(flush: true, failOnError: true)
-        //new Employee(...).save(flush: true, failOnError: true)
+        //new example.Employee(...).save(flush: true, failOnError: true)
+        //new example.Employee(...).save(flush: true, failOnError: true)
+        //example.Employee employee = new example.Employee(...).save(flush: true, failOnError: true)
+        //new example.Employee(...).save(flush: true, failOnError: true)
+        //new example.Employee(...).save(flush: true, failOnError: true)
         assert false, "TODO: Provide a setupData() implementation for this generated test suite"
         //employee.id
     }

@@ -14,11 +14,11 @@ class DepartmentServiceSpec extends Specification {
 
     private Long setupData() {
         // TODO: Populate valid domain instances and return a valid ID
-        //new Department(...).save(flush: true, failOnError: true)
-        //new Department(...).save(flush: true, failOnError: true)
-        //Department department = new Department(...).save(flush: true, failOnError: true)
-        //new Department(...).save(flush: true, failOnError: true)
-        //new Department(...).save(flush: true, failOnError: true)
+        //new example.Department(...).save(flush: true, failOnError: true)
+        //new example.Department(...).save(flush: true, failOnError: true)
+        //example.Department department = new example.Department(...).save(flush: true, failOnError: true)
+        //new example.Department(...).save(flush: true, failOnError: true)
+        //new example.Department(...).save(flush: true, failOnError: true)
         assert false, "TODO: Provide a setupData() implementation for this generated test suite"
         //department.id
     }

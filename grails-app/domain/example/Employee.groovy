@@ -11,7 +11,9 @@ class Employee {
         employeeId nullable: false
         brigadeId nullable: false
         startWorkExperience nullable: false
-        salary min: 1
+        salary min  : 1
     }
-    static belongsTo = Human
+    //static belongsTo = example.Brigade
+
+
 }

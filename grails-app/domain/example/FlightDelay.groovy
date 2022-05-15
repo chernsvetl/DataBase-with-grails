@@ -6,7 +6,7 @@ class FlightDelay {
     String delayReason
 
     static constraints = {
-       delayReason nullable: false, maxSize: 50
+        delayReason nullable: false, maxSize: 50
     }
-    static belongsTo = Flight  // right?
+   // static belongsTo = example.Flight
 }

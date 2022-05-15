@@ -14,11 +14,11 @@ class PassengerServiceSpec extends Specification {
 
     private Long setupData() {
         // TODO: Populate valid domain instances and return a valid ID
-        //new Passenger(...).save(flush: true, failOnError: true)
-        //new Passenger(...).save(flush: true, failOnError: true)
-        //Passenger passenger = new Passenger(...).save(flush: true, failOnError: true)
-        //new Passenger(...).save(flush: true, failOnError: true)
-        //new Passenger(...).save(flush: true, failOnError: true)
+        //new example.Passenger(...).save(flush: true, failOnError: true)
+        //new example.Passenger(...).save(flush: true, failOnError: true)
+        //example.Passenger passenger = new example.Passenger(...).save(flush: true, failOnError: true)
+        //new example.Passenger(...).save(flush: true, failOnError: true)
+        //new example.Passenger(...).save(flush: true, failOnError: true)
         assert false, "TODO: Provide a setupData() implementation for this generated test suite"
         //passenger.id
     }

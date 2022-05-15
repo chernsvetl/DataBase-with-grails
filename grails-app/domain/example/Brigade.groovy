@@ -6,10 +6,19 @@ class Brigade {
     Department department
 
 
+
     static constraints = {
         name blank: false, maxSize: 100, unique: true, nullable: false
         department nullable: false
+
     }
-    static belongsTo = Department
-    // добавить id работника, но как... если belongsTo ту-ту..
+    //static mapping = {
+      //  id column: 'code', type: 'integer'
+   // }
+/*
+    static mapping = {
+        department cascade: 'all-delete-orphan'
+    }
+
+ */
 }

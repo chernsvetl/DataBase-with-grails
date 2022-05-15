@@ -28,7 +28,7 @@ class BootStrap {
         // people
 
         Human human1 = new Human(
-         fullName: "Луговая Мария Петровна", birthday: '1984-11-22',  gender: female, childrenNumber: 1
+                fullName: "Луговая Мария Петровна", birthday: '1984-11-22',  gender: female, childrenNumber: 1
         ).save()
 
         Human human2 = new Human(
@@ -192,16 +192,16 @@ class BootStrap {
         ).save()
 
         // passengers
-       Passenger passenger1 =  new Passenger(human: human1).save()
-       Passenger passenger2 =  new Passenger(human: human2).save()
-       Passenger passenger3 =  new Passenger(human: human3).save()
-       Passenger passenger4 =  new Passenger(human: human4).save()
-       Passenger passenger5 =  new Passenger(human: human5).save()
-       Passenger passenger6 =  new Passenger(human: human6).save()
-       Passenger passenger7 =  new Passenger(human: human7).save()
-       Passenger passenger8 =  new Passenger(human: human8).save()
-       Passenger passenger9 =  new Passenger(human: human9).save()
-       Passenger passenger10 =  new Passenger(human: human10).save()
+        Passenger passenger1 =  new Passenger(human: human1).save()
+        Passenger passenger2 =  new Passenger(human: human2).save()
+        Passenger passenger3 =  new Passenger(human: human3).save()
+        Passenger passenger4 =  new Passenger(human: human4).save()
+        Passenger passenger5 =  new Passenger(human: human5).save()
+        Passenger passenger6 =  new Passenger(human: human6).save()
+        Passenger passenger7 =  new Passenger(human: human7).save()
+        Passenger passenger8 =  new Passenger(human: human8).save()
+        Passenger passenger9 =  new Passenger(human: human9).save()
+        Passenger passenger10 =  new Passenger(human: human10).save()
 
         // head-departments
         HeadDepartment headDepartment1 = new HeadDepartment(human:human34).save()

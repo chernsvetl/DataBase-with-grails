@@ -1,7 +1,5 @@
 package example
 
-import org.hibernate.mapping.ManyToOne
-
 class Plane {
 
     PlaneType typeId
@@ -18,8 +16,8 @@ class Plane {
         startUsingDate nullable: false
     }
     /*
-    static ManyToOne = PlaneType
-    static ManyToOne = Brigade
+    static ManyToOne = example.PlaneType
+    static ManyToOne = example.Brigade
 
      */
 }

@@ -5,8 +5,8 @@ class Town {
     Integer distance
 
     static constraints = {
-     name nullable: false, blank: false, maxSize: 50
-     distance nullable: false
+        name nullable: false, blank: false, maxSize: 50
+        distance nullable: false
     }
 
 }

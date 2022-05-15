@@ -5,5 +5,5 @@ class HeadDepartment {
 
     static constraints = {
     }
-    static belongsTo = Human
+   // static belongsTo = example.Human
 }

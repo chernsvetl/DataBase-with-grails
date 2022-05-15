@@ -16,4 +16,10 @@ class Ticket {
         price nullable: false
     }
     static belongsTo = Passenger
+    /*
+    static mapping = {
+       passengerId cascade: 'all-delete-orphan'
+   }
+
+     */
 }

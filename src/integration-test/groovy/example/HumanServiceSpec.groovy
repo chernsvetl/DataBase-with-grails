@@ -14,11 +14,11 @@ class HumanServiceSpec extends Specification {
 
     private Long setupData() {
         // TODO: Populate valid domain instances and return a valid ID
-        //new Human(...).save(flush: true, failOnError: true)
-        //new Human(...).save(flush: true, failOnError: true)
-        //Human human = new Human(...).save(flush: true, failOnError: true)
-        //new Human(...).save(flush: true, failOnError: true)
-        //new Human(...).save(flush: true, failOnError: true)
+        //new example.Human(...).save(flush: true, failOnError: true)
+        //new example.Human(...).save(flush: true, failOnError: true)
+        //example.Human human = new example.Human(...).save(flush: true, failOnError: true)
+        //new example.Human(...).save(flush: true, failOnError: true)
+        //new example.Human(...).save(flush: true, failOnError: true)
         assert false, "TODO: Provide a setupData() implementation for this generated test suite"
         //human.id
     }

@@ -14,11 +14,11 @@ class TownServiceSpec extends Specification {
 
     private Long setupData() {
         // TODO: Populate valid domain instances and return a valid ID
-        //new Town(...).save(flush: true, failOnError: true)
-        //new Town(...).save(flush: true, failOnError: true)
-        //Town town = new Town(...).save(flush: true, failOnError: true)
-        //new Town(...).save(flush: true, failOnError: true)
-        //new Town(...).save(flush: true, failOnError: true)
+        //new example.Town(...).save(flush: true, failOnError: true)
+        //new example.Town(...).save(flush: true, failOnError: true)
+        //example.Town town = new example.Town(...).save(flush: true, failOnError: true)
+        //new example.Town(...).save(flush: true, failOnError: true)
+        //new example.Town(...).save(flush: true, failOnError: true)
         assert false, "TODO: Provide a setupData() implementation for this generated test suite"
         //town.id
     }

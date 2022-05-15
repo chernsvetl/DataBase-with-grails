@@ -14,11 +14,11 @@ class HeadDepartmentServiceSpec extends Specification {
 
     private Long setupData() {
         // TODO: Populate valid domain instances and return a valid ID
-        //new HeadDepartment(...).save(flush: true, failOnError: true)
-        //new HeadDepartment(...).save(flush: true, failOnError: true)
-        //HeadDepartment headDepartment = new HeadDepartment(...).save(flush: true, failOnError: true)
-        //new HeadDepartment(...).save(flush: true, failOnError: true)
-        //new HeadDepartment(...).save(flush: true, failOnError: true)
+        //new example.HeadDepartment(...).save(flush: true, failOnError: true)
+        //new example.HeadDepartment(...).save(flush: true, failOnError: true)
+        //example.HeadDepartment headDepartment = new example.HeadDepartment(...).save(flush: true, failOnError: true)
+        //new example.HeadDepartment(...).save(flush: true, failOnError: true)
+        //new example.HeadDepartment(...).save(flush: true, failOnError: true)
         assert false, "TODO: Provide a setupData() implementation for this generated test suite"
         //headDepartment.id
     }
