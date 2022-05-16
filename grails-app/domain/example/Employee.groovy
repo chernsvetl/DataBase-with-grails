@@ -2,13 +2,13 @@ package example
 
 class Employee {
 
-    Human employeeId
+    Human employee
     Brigade brigadeId
     Date startWorkExperience
     Integer salary
 
     static constraints = {
-        employeeId nullable: false
+        employee nullable: false
         brigadeId nullable: false
         startWorkExperience nullable: false
         salary min  : 1

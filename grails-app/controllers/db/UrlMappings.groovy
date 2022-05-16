@@ -3,7 +3,7 @@ package db
 class UrlMappings {
 
     static mappings = {
-        "/department"(resources:"department")
+
         "/$controller/$action?/$id?(.$format)?"{
             constraints {
                 // apply constraints here

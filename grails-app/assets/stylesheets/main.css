@@ -25,7 +25,7 @@ html {
 }
 
 html.no-cssgradients {
-    background-color: #aaa;
+    background-color: rgba(40, 33, 255, 0.38);
 }
 
 html * {
@@ -34,15 +34,15 @@ html * {
 
 body {
     background-color: #F5F5F5;
-    color: #333333;
+    color: #1526ff;
     overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
-    -moz-box-shadow: 0 0 0.3em #424649;
-    -webkit-box-shadow: 0 0 0.3em #424649;
-    box-shadow: 0 0 0.3em #424649;
+    -moz-box-shadow: 0 0 0.3em #d9b916;
+    -webkit-box-shadow: 0 0 0.3em #0066ff;
+    box-shadow: 0 0 0.3em #000dff;
 }
 
 #grailsLogo {
-    background-color: #feb672;
+    background-color: #e6418a;
 }
 
 a:hover, a:active {
@@ -92,20 +92,20 @@ img {
 .footer strong a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.8rem;
 }
 
 .footer {
-    background: #424649;
-    color: #ffffff;
+    background: #00aaff;
+    color: #fefefe;
     clear: both;
-    font-size: 1em;
+    font-size: 1.3em;
     padding: 2em 0;
     min-height: 1em;
 }
 
 .footer a {
-    color: #feb672;
+    color: #0066ff;
 }
 
 .spinner {
@@ -140,7 +140,7 @@ img {
 }
 
 .nav a {
-    color: #666666;
+    color: #d1007b;
     display: block;
     padding: 0.25em 0.7em;
     text-decoration: none;
@@ -156,19 +156,19 @@ img {
 }
 
 .nav a:active, .nav a:visited {
-    color: #666666;
+    color: #000dff;
 }
 
 .nav a:focus, .nav a:hover {
-    background-color: #999999;
+    background-color: #2f00ff;
     color: #ffffff;
     outline: none;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 1px rgba(238, 22, 22, 0.8);
 }
 
 .no-borderradius .nav a:focus, .no-borderradius .nav a:hover {
     background-color: transparent;
-    color: #444444;
+    color: #0077ff;
     text-decoration: underline;
 }
 
@@ -191,7 +191,7 @@ img {
 }
 
 .nav li.dropdown.show ul.dropdown-menu {
-    background-color: #424649;
+    background-color: rgba(40, 33, 255, 0.38);
 }
 
 /* CREATE/EDIT FORMS AND SHOW PAGES */
@@ -217,7 +217,7 @@ fieldset,
 
 .fieldcontain label,
 .fieldcontain .property-label {
-    color: #666666;
+    color: #000dff;
     text-align: right;
     width: 25%;
 }
@@ -415,7 +415,7 @@ th {
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffffff), color-stop(1, #eaeaea));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#ffffff', EndColorStr = '#eaeaea');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
-    color: #666666;
+    color: #a21818;
     font-weight: bold;
     line-height: 1.7em;
     padding: 0.2em 0.6em;
@@ -435,7 +435,7 @@ th a:link, th a:visited {
 }
 
 th a:hover, th a:focus {
-    color: #333333;
+    color: #e73535;
 }
 
 th.sortable a {
@@ -500,19 +500,19 @@ th:hover, tr:hover {
 .no-borderradius .pagination a:hover, .no-borderradius .pagination a:focus,
 .no-borderradius .pagination .currentStep {
     background-color: transparent;
-    color: #444444;
+    color: #934747;
     text-decoration: underline;
 }
 
 /* ACTION BUTTONS */
 
 .buttons {
-    background-color: #efefef;
+    background-color: rgb(254, 254, 254);
     overflow: hidden;
     padding: 0.3em;
-    -moz-box-shadow: 0 0 3px 1px #aaaaaa;
-    -webkit-box-shadow: 0 0 3px 1px #aaaaaa;
-    box-shadow: 0 0 3px 1px #aaaaaa;
+    -moz-box-shadow: 0 0 3px 1px #ee3434;
+    -webkit-box-shadow: 0 0 3px 1px #020202;
+    box-shadow: 0 0 3px 1px #e6418a;
     margin: 0.1em 0 0 0;
     border: none;
 }
@@ -536,10 +536,10 @@ th:hover, tr:hover {
 
 .buttons input:hover, .buttons input:focus,
 .buttons a:hover, .buttons a:focus {
-    background-color: #999999;
+    background-color: #6a4a4a;
     color: #ffffff;
     outline: none;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 1px rgba(255, 226, 0, 0.36);
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -548,7 +548,7 @@ th:hover, tr:hover {
 .no-borderradius .buttons input:hover, .no-borderradius .buttons input:focus,
 .no-borderradius .buttons a:hover, .no-borderradius .buttons a:focus {
     background-color: transparent;
-    color: #444444;
+    color: rgba(255, 197, 0, 0.33);
     text-decoration: underline;
 }
 
@@ -576,9 +576,9 @@ a.skip {
 }
 
 .grails-logo-container {
-    background: #7c7c7c no-repeat 50% 30%;
+    background: rgb(13, 209, 243) no-repeat 50% 30%;
     margin-bottom: 20px;
-    color: white;
+    color: rgba(0, 170, 255, 0.61);
     height:300px;
     text-align:center;
 }

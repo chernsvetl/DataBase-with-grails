@@ -8,6 +8,7 @@ class Ticket {
     Boolean isLuggage
     Float price
 
+
     static constraints = {
         passengerId nullable: false
         flightId nullable: false
@@ -15,11 +16,8 @@ class Ticket {
         isLuggage nullable: false
         price nullable: false
     }
-    static belongsTo = Passenger
-    /*
-    static mapping = {
-       passengerId cascade: 'all-delete-orphan'
-   }
 
-     */
+
+
+
 }

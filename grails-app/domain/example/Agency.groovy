@@ -6,15 +6,9 @@ class Agency {
     Ticket ticketId
 
 
-
     static constraints = {
     }
-    /*
-    static mapping = {
-        ticketId cascade: 'all-delete-orphan'
-        flightId cascade: 'all-delete-orphan'
-    }
 
-     */
+
 
 }
