@@ -1,27 +1,12 @@
-package db
 
-import example.Agency
-import example.Brigade
-import example.Department
-import example.Employee
-import example.Flight
-import example.FlightDelay
-import example.Gender
-import example.HeadDepartment
-import example.Human
-import example.MedicalExamination
-import example.Passenger
-import example.Plane
-import example.PlaneType
-import example.Repair
-import example.TechnicalInspection
-import example.Ticket
-import example.Town
+package db
 
 
 class BootStrap {
 
     def init = { servletContext ->
+
+        /*
         Gender male = new Gender(name : "мужской")
         Gender female = new Gender(name : "женский")
 
@@ -127,6 +112,7 @@ class BootStrap {
         Human human33 = new Human(
                 fullName: "Викторова Елена Петровна", birthday: '1990-01-22',  gender: female, childrenNumber: 2
         ).save()
+        /*
         Human human34 = new Human(
                 fullName: "Семенова Надежда Борисовна", birthday: '1970-11-22',  gender: female, childrenNumber: 0
         ).save()
@@ -191,6 +177,12 @@ class BootStrap {
                 fullName: "Гаврилова Варвара Михайловна", birthday: '1968-11-22',  gender: female, childrenNumber: 0
         ).save()
 
+        Human human55 = new Human(
+                fullName: "Уварова Мария Петровна", birthday: '1984-10-22',  gender: female, childrenNumber: 1
+        ).save()
+
+         */
+/*
         // passengers
         Passenger passenger1 =  new Passenger(human: human1).save()
         Passenger passenger2 =  new Passenger(human: human2).save()
@@ -203,14 +195,7 @@ class BootStrap {
         Passenger passenger9 =  new Passenger(human: human9).save()
         Passenger passenger10 =  new Passenger(human: human10).save()
 
-        // head-departments
-        HeadDepartment headDepartment1 = new HeadDepartment(human:human34).save()
-        HeadDepartment headDepartment2 = new HeadDepartment(human:human35).save()
-        HeadDepartment headDepartment3 = new HeadDepartment(human:human36).save()
-        HeadDepartment headDepartment4 = new HeadDepartment(human:human37).save()
-        HeadDepartment headDepartment5 = new HeadDepartment(human:human38).save()
-        HeadDepartment headDepartment6 = new HeadDepartment(human:human39).save()
-        HeadDepartment headDepartment7 = new HeadDepartment(human:human40).save()
+
 
         //towns
         Town town1 = new Town(name: "Екатеринбург", distance: 150).save()
@@ -218,6 +203,15 @@ class BootStrap {
         Town town3 = new Town(name:"Мюнхен",distance: 501).save()
         Town town4 = new Town(name:"Алматы", distance:79).save()
         Town town5 = new Town(name:"Красноярск", distance:5).save()
+
+        // head-departments
+        HeadDepartment headDepartment1 = new HeadDepartment(human:human11).save()
+        HeadDepartment headDepartment2 = new HeadDepartment(human:human16).save()
+        HeadDepartment headDepartment3 = new HeadDepartment(human:human21).save()
+        HeadDepartment headDepartment4 = new HeadDepartment(human:human26).save()
+        HeadDepartment headDepartment5 = new HeadDepartment(human:human28).save()
+        HeadDepartment headDepartment6 = new HeadDepartment(human:human30).save()
+        HeadDepartment headDepartment7 = new HeadDepartment(human:human32).save()
 
         //departments
         Department department1 = new Department(name:  "служба летная", headDepartment: headDepartment1).save()
@@ -245,13 +239,14 @@ class BootStrap {
         Brigade brigade14 = new Brigade(name: "serving-4", department: department3).save()
         Brigade brigade15 = new Brigade(name: "serving-5", department: department3).save()
         Brigade brigade16 = new Brigade(name: "dispatcher-1", department: department4).save()
-        Brigade brigade17 = new Brigade(name: "dispatcher-1", department: department4).save()
+        Brigade brigade17 = new Brigade(name: "dispatcher-2", department: department4).save()
         Brigade brigade18 = new Brigade(name: "cash-1", department: department5).save()
         Brigade brigade19 = new Brigade(name: "cash-2", department: department5).save()
         Brigade brigade20 = new Brigade(name: "secure-1", department: department6).save()
         Brigade brigade21 = new Brigade(name: "secure-2", department: department6).save()
         Brigade brigade22 = new Brigade(name: "help-1", department: department7).save()
         Brigade brigade23 = new Brigade(name: "help-2", department: department7).save()
+
 
 
         // plane type
@@ -270,49 +265,80 @@ class BootStrap {
 
         // flight
         Flight flight1 = new Flight(type: 'ОТПРАВЛЕНИЕ', planeId : plane1, townId: town1, flightTime :'2012-01-14 01:42:45',isCancelled: false, isDepartureAbroad :false).save()
-        Flight flight2 = new Flight(type: 'ОТПРАВЛЕНИЕ', planeId:  plane1, townId: town1, flightTime : '2012-01-14 01:42:45', isCancelled:  false, isDepartureAbroad:  false).save()
-        Flight flight3 = new Flight(type: 'ПРИБЫТИЕ', planeId:  plane1, townId:  town4,flightTime:  '2012-01-16 05:02:43', isCancelled:  false, isDepartureAbroad:  false).save()
-        Flight flight4 = new Flight(type :'ОТПРАВЛЕНИЕ', planeId:  plane2, townId:  town1, flightTime:  '2012-01-21 03:58:05', isCancelled:  false, isDepartureAbroad:  false).save()
-        Flight flight5 = new Flight(type : 'ПРИБЫТИЕ', planeId:  plane2, townId:  town5, flightTime:  '2012-01-23 16:08:10', isCancelled:  false, isDepartureAbroad:  false).save()
-        Flight flight6 = new Flight(type :'ОТПРАВЛЕНИЕ', planeId:  plane3, townId:  town5, flightTime:  '2012-01-26 16:16:00', isCancelled:  false, isDepartureAbroad:  false).save()
-        Flight flight7 = new Flight(type: 'ОТПРАВЛЕНИЕ', planeId:  plane4, townId:  town2, flightTime:  '2012-01-21 03:58:00', isCancelled:  false, isDepartureAbroad:  false).save()
-        Flight flight8 = new Flight(type:  'ПРИБЫТИЕ', planeId:  plane3 , townId:  town2, flightTime:  '2012-01-26 20:00:00', isCancelled:  false, isDepartureAbroad:  false).save()
-        Flight flight9 = new Flight(type:  'ПРИБЫТИЕ', planeId:  plane4, townId:  town3, flightTime:  '2012-01-23 16:08:00', isCancelled:  false, isDepartureAbroad:  false).save()
-        Flight flight10 = new Flight(type:  'ОТПРАВЛЕНИЕ', planeId:  plane5, townId:  town1, flightTime:  '2012-05-06 16:10:25', isCancelled:  false, isDepartureAbroad:  false).save()
-        Flight flight11 = new Flight(type:  'ПРИБЫТИЕ', planeId:  plane5, townId:  town5, flightTime:  '2012-05-06 23:08:00', isCancelled:  false, isDepartureAbroad:  false).save()
-        Flight flight12 = new Flight(type:  'ОТПРАВЛЕНИЕ', planeId:  plane5, townId:  town3, flightTime:  '2012-05-07 10:10:20', isCancelled:  false, isDepartureAbroad:  true).save()
+        Flight flight2 = new Flight(type: 'ПРИБЫТИЕ', planeId:  plane1, townId:  town4,flightTime:  '2012-01-16 05:02:43', isCancelled:  false, isDepartureAbroad:  false).save()
+        Flight flight3 = new Flight(type :'ОТПРАВЛЕНИЕ', planeId:  plane2, townId:  town1, flightTime:  '2012-01-21 03:58:05', isCancelled:  false, isDepartureAbroad:  false).save()
+        Flight flight4 = new Flight(type : 'ПРИБЫТИЕ', planeId:  plane2, townId:  town5, flightTime:  '2012-01-23 16:08:10', isCancelled:  false, isDepartureAbroad:  false).save()
+        Flight flight5 = new Flight(type :'ОТПРАВЛЕНИЕ', planeId:  plane3, townId:  town5, flightTime:  '2012-01-26 16:16:00', isCancelled:  false, isDepartureAbroad:  false).save()
+        Flight flight6 = new Flight(type: 'ОТПРАВЛЕНИЕ', planeId:  plane4, townId:  town2, flightTime:  '2012-01-21 03:58:00', isCancelled:  false, isDepartureAbroad:  false).save()
+        Flight flight7 = new Flight(type:  'ПРИБЫТИЕ', planeId:  plane3 , townId:  town2, flightTime:  '2012-01-26 20:00:00', isCancelled:  false, isDepartureAbroad:  false).save()
+        Flight flight8 = new Flight(type:  'ПРИБЫТИЕ', planeId:  plane4, townId:  town3, flightTime:  '2012-01-23 16:08:00', isCancelled:  false, isDepartureAbroad:  false).save()
+        Flight flight9 = new Flight(type:  'ОТПРАВЛЕНИЕ', planeId:  plane5, townId:  town1, flightTime:  '2012-05-06 16:10:25', isCancelled:  false, isDepartureAbroad:  false).save()
+        Flight flight10 = new Flight(type:  'ПРИБЫТИЕ', planeId:  plane5, townId:  town5, flightTime:  '2012-05-06 23:08:00', isCancelled:  false, isDepartureAbroad:  false).save()
+        Flight flight11 = new Flight(type:  'ОТПРАВЛЕНИЕ', planeId:  plane5, townId:  town3, flightTime:  '2012-05-07 10:10:20', isCancelled:  false, isDepartureAbroad:  true).save()
+        Flight flight12 = new Flight(type:  'ОТПРАВЛЕНИЕ', planeId:  plane3, townId:  town3, flightTime:  '2012-01-27 22:00:00', isCancelled:  true, isDepartureAbroad:  false).save()
+
+
+
 
         // flight delay
-        FlightDelay delay1 = new FlightDelay(flightId : 2, delayReason : 'поломка самолета').save()
-        FlightDelay delay2 = new FlightDelay(flightId:  3, delayReason:  'обледенение полосы').save()
+        FlightDelay delay1 = new FlightDelay(flightId : flight12, delayReason : 'поломка самолета').save()
 
         // employee
 
-        Employee employee1 = new Employee(employee : human11, brigadeId : brigade1, startWorkExperience:  '2010-02-03', salary : 250000).save()
-        Employee employee2 = new Employee(employee:  human12, brigadeId:  brigade2, startWorkExperience:  '2013-06-04', salary:  180000).save()
-        Employee employee3 = new Employee(employee:  human13, brigadeId:  brigade3, startWorkExperience:  '2011-02-02', salary:  200000).save()
-        Employee employee4 = new Employee(employee:  human14, brigadeId:  brigade4, startWorkExperience:  '2018-04-05', salary:  210010).save()
-        Employee employee5 = new Employee(employee:  human15, brigadeId:  brigade5, startWorkExperience:  '2010-04-24', salary:  150000).save()
-        Employee employee6 = new Employee(employee:  human16, brigadeId:  brigade6, startWorkExperience:  '2016-02-01', salary:  100000).save()
-        Employee employee7 = new Employee(employee:  human17, brigadeId:  brigade7, startWorkExperience:  '2018-02-16', salary:  101000).save()
-        Employee employee8 = new Employee(employee:  human18, brigadeId:  brigade8, startWorkExperience:  '2015-10-12', salary:  120000).save()
-        Employee employee9 = new Employee(employee:  human19, brigadeId:  brigade9, startWorkExperience:  '2012-05-07', salary:  140500).save()
-        Employee employee10 = new Employee(employee:  human20, brigadeId:  brigade10, startWorkExperience:  '2017-05-01', salary:  80000).save()
-        Employee employee11 = new Employee(employee:  human21, brigadeId:  brigade11, startWorkExperience:  '2017-06-19', salary:  30000).save()
-        Employee employee12 = new Employee(employee:  human22, brigadeId:  brigade12, startWorkExperience:  '2013-06-20', salary:  35000).save()
-        Employee employee13 = new Employee(employee:  human23, brigadeId:  brigade13, startWorkExperience:  '2011-05-12', salary:  35500).save()
-        Employee employee14 = new Employee(employee:  human24, brigadeId:  brigade14, startWorkExperience:  '2018-03-03', salary:  36000).save()
-        Employee employee15 = new Employee(employee:  human25, brigadeId:  brigade15, startWorkExperience:  '2010-02-14', salary:  48000).save()
-        Employee employee16 = new Employee(employee:  human26, brigadeId:  brigade16, startWorkExperience:  '2018-02-01', salary:  90000).save()
-        Employee employee17 = new Employee(employee:  human27, brigadeId:  brigade17, startWorkExperience:  '2018-02-28', salary:  98000).save()
-        Employee employee18 = new Employee(employee:  human28, brigadeId:  brigade18, startWorkExperience:  '2014-10-12', salary:  35000).save()
-        Employee employee19 = new Employee(employee:  human29, brigadeId:  brigade19, startWorkExperience:  '2012-05-21', salary:  36000).save()
-        Employee employee20 = new Employee(employee:  human30, brigadeId:  brigade20, startWorkExperience:  '2017-07-01', salary:  23000).save()
-        Employee employee21 = new Employee(employee:  human31, brigadeId:  brigade21, startWorkExperience:  '2019-10-12', salary:  24000).save()
-        Employee employee22 = new Employee(employee:  human32, brigadeId:  brigade22, startWorkExperience:  '2021-05-07', salary:  15000).save()
-        Employee employee23 = new Employee(employee:  human33, brigadeId:  brigade23, startWorkExperience:  '2020-07-01', salary:  18000).save()
+        Employee employee1 = new Employee(humanId : human11, brigadeId : brigade1, startWorkExperience:  '2010-02-03', salary : 250000).save()
+        Employee employee2 = new Employee(humanId:  human12, brigadeId:  brigade2, startWorkExperience:  '2013-06-04', salary:  180000).save()
+        Employee employee3 = new Employee(humanId:  human13, brigadeId:  brigade3, startWorkExperience:  '2011-02-02', salary:  200000).save()
+        Employee employee4 = new Employee(humanId:  human14, brigadeId:  brigade4, startWorkExperience:  '2018-04-05', salary:  210010).save()
+        Employee employee5 = new Employee(humanId:  human15, brigadeId:  brigade5, startWorkExperience:  '2010-04-24', salary:  150000).save()
+        Employee employee6 = new Employee(humanId:  human16, brigadeId:  brigade6, startWorkExperience:  '2016-02-01', salary:  100000).save()
+        Employee employee7 = new Employee(humanId:  human17, brigadeId:  brigade7, startWorkExperience:  '2018-02-16', salary:  101000).save()
+        Employee employee8 = new Employee(humanId:  human18, brigadeId:  brigade8, startWorkExperience:  '2015-10-12', salary:  120000).save()
+        Employee employee9 = new Employee(humanId:  human19, brigadeId:  brigade9, startWorkExperience:  '2012-05-07', salary:  140500).save()
+        Employee employee10 = new Employee(humanId:  human20, brigadeId:  brigade10, startWorkExperience:  '2017-05-01', salary:  80000).save()
+        Employee employee11 = new Employee(humanId:  human21, brigadeId:  brigade11, startWorkExperience:  '2017-06-19', salary:  30000).save()
+        Employee employee12 = new Employee(humanId:  human22, brigadeId:  brigade12, startWorkExperience:  '2013-06-20', salary:  35000).save()
+        Employee employee13 = new Employee(humanId:  human23, brigadeId:  brigade13, startWorkExperience:  '2011-05-12', salary:  35500).save()
+        Employee employee14 = new Employee(humanId:  human24, brigadeId:  brigade14, startWorkExperience:  '2018-03-03', salary:  36000).save()
+        Employee employee15 = new Employee(humanId:  human25, brigadeId:  brigade15, startWorkExperience:  '2010-02-14', salary:  48000).save()
+        Employee employee16 = new Employee(humanId:  human26, brigadeId:  brigade16, startWorkExperience:  '2018-02-01', salary:  90000).save()
+        Employee employee17 = new Employee(humanId:  human27, brigadeId:  brigade17, startWorkExperience:  '2018-02-28', salary:  98000).save()
+        Employee employee18 = new Employee(humanId:  human28, brigadeId:  brigade18, startWorkExperience:  '2014-10-12', salary:  35000).save()
+        Employee employee19 = new Employee(humanId:  human29, brigadeId:  brigade19, startWorkExperience:  '2012-05-21', salary:  36000).save()
+        Employee employee20 = new Employee(humanId:  human30, brigadeId:  brigade20, startWorkExperience:  '2017-07-01', salary:  23000).save()
+        Employee employee21 = new Employee(humanId:  human31, brigadeId:  brigade21, startWorkExperience:  '2019-10-12', salary:  24000).save()
+        Employee employee22 = new Employee(humanId:  human32, brigadeId:  brigade22, startWorkExperience:  '2021-05-07', salary:  15000).save()
+        Employee employee23 = new Employee(humanId:  human33, brigadeId:  brigade23, startWorkExperience:  '2020-07-01', salary:  18000).save()
 
 
+        /*
+        Employee employee25 = new Employee(humanId:  human34, brigadeId:  brigade25, startWorkExperience:  '2011-02-14', salary:  48000).save()
+        Employee employee26 = new Employee(humanId:  human35, brigadeId:  brigade26, startWorkExperience:  '2019-02-01', salary:  90000).save()
+        Employee employee27 = new Employee(humanId:  human36, brigadeId:  brigade27, startWorkExperience:  '2018-02-28', salary:  98000).save()
+        Employee employee28 = new Employee(humanId:  human37, brigadeId:  brigade28, startWorkExperience:  '2012-10-12', salary:  35000).save()
+        Employee employee29 = new Employee(humanId:  human38, brigadeId:  brigade29, startWorkExperience:  '2011-05-21', salary:  36000).save()
+        Employee employee30 = new Employee(humanId:  human39, brigadeId:  brigade30, startWorkExperience:  '2016-07-01', salary:  23000).save()
+        Employee employee31 = new Employee(humanId:  human40, brigadeId:  brigade31, startWorkExperience:  '2018-10-12', salary:  24000).save()
+        Employee employee32 = new Employee(humanId:  human41, brigadeId:  brigade32, startWorkExperience:  '2020-05-07', salary:  15000).save()
+        Employee employee33 = new Employee(humanId:  human42, brigadeId:  brigade33, startWorkExperience:  '2019-07-01', salary:  18000).save()
+        Employee employee34 = new Employee(humanId:  human43, brigadeId:  brigade34, startWorkExperience:  '2021-07-01', salary:  48000).save()
+        Employee employee35 = new Employee(humanId:  human44, brigadeId:  brigade35, startWorkExperience:  '2015-02-14', salary:  48000).save()
+        Employee employee36 = new Employee(humanId:  human45, brigadeId:  brigade36, startWorkExperience:  '2016-02-01', salary:  90000).save()
+        Employee employee37 = new Employee(humanId:  human46, brigadeId:  brigade37, startWorkExperience:  '2018-02-28', salary:  98000).save()
+        Employee employee38 = new Employee(humanId:  human47, brigadeId:  brigade38, startWorkExperience:  '2019-10-12', salary:  35000).save()
+        Employee employee39 = new Employee(humanId:  human48, brigadeId:  brigade39, startWorkExperience:  '2011-05-21', salary:  36000).save()
+        Employee employee40 = new Employee(humanId:  human49, brigadeId:  brigade40, startWorkExperience:  '2015-07-01', salary:  23000).save()
+        Employee employee41 = new Employee(humanId:  human50, brigadeId:  brigade41, startWorkExperience:  '2019-11-12', salary:  24000).save()
+        Employee employee42 = new Employee(humanId:  human51, brigadeId:  brigade42, startWorkExperience:  '2021-07-07', salary:  15000).save()
+        Employee employee43 = new Employee(humanId:  human52, brigadeId:  brigade43, startWorkExperience:  '2020-09-01', salary:  18000).save()
+        Employee employee44 = new Employee(humanId:  human53, brigadeId:  brigade44, startWorkExperience:  '2020-08-01', salary:  48000).save()
+        Employee employee45 = new Employee(humanId:  human54, brigadeId:  brigade45, startWorkExperience:  '2020-04-01', salary:  48000).save()
+
+
+
+         */
+
+
+/*
         // ticket
         Ticket ticket1 = new Ticket(passengerId: passenger1, flightId: flight1, status: 'продан', isLuggage: true, price: 1001).save()
         Ticket ticket2 = new Ticket(passengerId:  passenger2, flightId:  flight2, status:  'продан',isLuggage:  true, price:  1001).save()
@@ -326,11 +352,13 @@ class BootStrap {
         Ticket ticket10 = new Ticket(passengerId:  passenger10, flightId:  flight4, status:  'вернут', isLuggage:  true, price:  2020).save()
 
         // medical examination
+
         MedicalExamination medicalExamination1 = new MedicalExamination(employee: employee1, medicalExamination: '2021-01-02', isPassed: true ).save()
         MedicalExamination medicalExamination2 = new MedicalExamination(employee:  employee2, medicalExamination:  '2019-08-01', isPassed:  true).save()
-        MedicalExamination medicalExamination3 = new MedicalExamination(employee:  employee13, medicalExamination:  '2020-02-05', isPassed:  true).save()
-        MedicalExamination medicalExamination4 = new MedicalExamination(employeeId:  employee14, medicalExamination:  '2021-03-03', isPassed:  true).save()
-        MedicalExamination medicalExamination5 = new MedicalExamination(employeeId:  employee15, medicalExamination:  '2010-02-04', isPassed:  false).save()
+        MedicalExamination medicalExamination3 = new MedicalExamination(employee:  employee3, medicalExamination:  '2020-02-05', isPassed:  true).save()
+        MedicalExamination medicalExamination4 = new MedicalExamination(employee:  employee4, medicalExamination:  '2021-03-03', isPassed:  true).save()
+        MedicalExamination medicalExamination5 = new MedicalExamination(employee:  employee5, medicalExamination:  '2018-02-04', isPassed:  false).save()
+
 
         // repair
         Repair repair1 = new Repair(planeId: plane1, startTime: '2004-06-18 12:00:00', endTime: '2004-06-18 16:39:40').save()
@@ -364,6 +392,7 @@ class BootStrap {
         Agency agency1 = new Agency(flightId: flight1, ticketId: ticket1).save()
         Agency agency2 = new Agency(flightId: flight1, ticketId: ticket2).save()
 
+*/
     }
 
     def destroy = {

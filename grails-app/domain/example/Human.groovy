@@ -9,7 +9,6 @@ class Human {
     Integer childrenNumber
 
 
-
     static constraints = {
         fullName  blank: false, size: 2..100
         birthday nullable: false
@@ -17,6 +16,9 @@ class Human {
         childrenNumber nullable: false
     }
 
+    String toString(){
+        fullName
+    }
 }
 
 

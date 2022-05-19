@@ -21,10 +21,25 @@
         <a href="filteringAndSorting">Фильтры и сортировка</a>
     </div>
     <div>
-        <a class="fieldcontain required" href="AVG">Запрос с AVG</a>
+        <a class="fieldcontain required" href="groupBy">Group by</a>
     </div>
+    <div>
+        <a class="fieldcontain required" href="having">Having</a>
     </div>
-        <a class="fieldcontain required" href="outerJoin">Запрос с OUTER JOIN</a>
+    <div>
+        <a class="fieldcontain required" href="innerJoin">Inner Join</a>
+    </div>
+    <div>
+        <a class="fieldcontain required" href="outerJoin">Outer Join</a>
+    </div>
+    <div>
+        <a class="fieldcontain required" href="cte">Запрос с CTE</a>
+        <div>
+            <a class="fieldcontain required" href="windowFunc">Запрос с Window function</a>
+        </div>
+        <div>
+            <a class="fieldcontain required" href="recursive">Запрос рекурсивный</a>
+        </div>
     </div>
 </div>
 </body>

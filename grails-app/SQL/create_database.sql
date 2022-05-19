@@ -1,12 +1,19 @@
+/*
+create table gender
+(
+    id bigserial primary key,
+    name varchar
+);
 
 create table human
 (
     id bigserial primary key,
-    fullName varchar(100) not null,
+    fullName varchar not null,
     birthday date not null,
-    gender varchar(8) not null,
-    childrenNumber bigint
+    gender varchar not null,
+    childrenNumber integer
 );
+
 
 create table head_department
 (
@@ -17,10 +24,13 @@ create table head_department
 create table department
 (
     id bigserial primary key,
-    name varchar(100) not null unique,
+    name varchar not null unique,
     head_department_id bigint not null references head_department
 );
 
+
+String name
+    HeadDepartment headDepartment
 
 create table brigade
 (
@@ -133,3 +143,5 @@ create table agency
     ticket_id bigint references ticket,
     primary key (flight_id,ticket_id)
 );
+
+ */

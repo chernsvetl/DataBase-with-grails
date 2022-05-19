@@ -74,7 +74,7 @@ dependencies {
     testImplementation "org.seleniumhq.selenium:selenium-support:4.0.0"
     testRuntimeOnly "org.seleniumhq.selenium:selenium-chrome-driver:4.0.0"
     testRuntimeOnly "org.seleniumhq.selenium:selenium-firefox-driver:4.0.0"
-
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.3.5'
 }
 
 bootRun {
@@ -87,6 +87,7 @@ bootRun {
     sourceResources sourceSets.main
     String springProfilesActive = 'spring.profiles.active'
     systemProperty springProfilesActive, System.getProperty(springProfilesActive)
+
 }
 
 tasks.withType(GroovyCompile) {

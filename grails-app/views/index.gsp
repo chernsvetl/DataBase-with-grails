@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcome to Airport system!</title>
+    <title>Welcome to Airport!</title>
 </head>
 <body>
 <content tag="nav">
@@ -54,13 +54,13 @@
     <div class="container">
         <section class="row colset-2-its">
 
-            <h1>Welcome to Airport system!</h1>
+            <h1>Welcome to Airport!</h1>
 
             <p>
 
                 Congratulations, you have successfully logged in to the airport's website. Below you
-                can find the information you are interested in using controllers. In Quaries you can
-                find the most popular requests. Wish you a good time on our website.
+                can find the information you are interested in using controllers. Below you can see the weather,
+                see the sights as well as the history of the local airport.
 
             </p>
 

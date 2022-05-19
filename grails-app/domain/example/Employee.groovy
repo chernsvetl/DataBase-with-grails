@@ -2,18 +2,20 @@ package example
 
 class Employee {
 
-    Human employee
-    Brigade brigadeId
+static belongsTo = [brigade:Brigade]
+    Human humanId  // 1-1
     Date startWorkExperience
     Integer salary
 
     static constraints = {
-        employee nullable: false
-        brigadeId nullable: false
+        humanId nullable: false, unique: true
         startWorkExperience nullable: false
-        salary min  : 1
+        salary min  : 1, nullable: false
+        brigade nullable: false
     }
-    //static belongsTo = example.Brigade
 
+    String toString(){
+        id
+    }
 
 }

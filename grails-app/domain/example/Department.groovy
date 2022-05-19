@@ -2,21 +2,17 @@ package example
 
 class Department {
 
-
+    static hasMany = [brigades:Brigade]
     String name
-    HeadDepartment headDepartment
+    Human headDepartment
 
 
     static constraints = {
-        name unique: true, blank: false, size: 2..100
-        headDepartment nullable: false, unique: true // or not unique
+       name unique: true, blank: false, size: 2..100
+        headDepartment nullable: false, unique: true
     }
 
-    /*
-    static mapping = {
-        headDepartment cascade: 'all-delete-orphan'
+    String toString(){
+        name
     }
-
-     */
-   // static belongsTo = example.Brigade
 }

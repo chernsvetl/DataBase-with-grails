@@ -1,21 +1,16 @@
 package example
 
 class Passenger {
-    Human human
 
+    Human humanId
 
-    static hasMany = [tickets: Ticket]
-    /*
-    static mapping = {
-        tickets cascade: 'all-delete-orphan'
-    }
+    static hasOne = [tickets:Ticket]
 
-     */
-    //static hasMany = [ticketId:example.Ticket]
-    //static ManyToOne = [human:example.Human]
-    //static belongsTo = [human:example.Human]
     static constraints = {
-
+        tickets nullable: true
     }
 
+    String toString(){
+     humanId
+    }
 }

@@ -9,4 +9,7 @@ class Town {
         distance nullable: false
     }
 
+    String toString(){
+        name
+    }
 }

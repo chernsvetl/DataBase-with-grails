@@ -1,22 +1,28 @@
 package example
 
-import java.sql.Timestamp
-
 class Flight {
 
-    String type
-    Plane planeId
+    static belongsTo = [plane:Plane]
+    static hasMany = [passengers:Passenger, tickets:Ticket]
+
+    StatusOption statusFlight
     Town townId
-    Timestamp flightTime
+    Date flightTime
     Boolean isCancelled
     Boolean isDepartureAbroad
 
     static constraints = {
-        type nullable: false, maxSize: 30
-        planeId nullable: false
+        statusFlight blank: false, size: 2..12
         townId nullable: false
         flightTime nullable: false
         isCancelled nullable: false
         isDepartureAbroad nullable: false
+        tickets nullable: true
+        passengers nullable: true
     }
+
+    String toString(){
+       id
+    }
+
 }
