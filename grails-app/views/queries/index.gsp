@@ -40,6 +40,12 @@
         <div>
             <a class="fieldcontain required" href="recursive">Запрос рекурсивный</a>
         </div>
+        <div>
+            <a class="fieldcontain required" href="filter">Фильтр</a>
+        </div>
+        <div>
+            <a class="fieldcontain required" href="crossJoin">Cross Join</a>
+        </div>
     </div>
 </div>
 </body>

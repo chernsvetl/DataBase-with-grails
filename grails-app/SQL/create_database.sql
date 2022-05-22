@@ -1,4 +1,4 @@
-/*
+
 create table gender
 (
     id bigserial primary key,
@@ -28,9 +28,6 @@ create table department
     head_department_id bigint not null references head_department
 );
 
-
-String name
-    HeadDepartment headDepartment
 
 create table brigade
 (
@@ -144,4 +141,3 @@ create table agency
     primary key (flight_id,ticket_id)
 );
 
- */

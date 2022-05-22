@@ -3,7 +3,7 @@ package example
 class Employee {
 
 static belongsTo = [brigade:Brigade]
-    Human humanId  // 1-1
+    Human humanId
     Date startWorkExperience
     Integer salary
 

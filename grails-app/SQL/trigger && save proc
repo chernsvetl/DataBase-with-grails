@@ -1,0 +1,16 @@
+CREATE TABLE town_log(
+name character varying(50) NOT NULL,
+entry_date TEXT NOT NULL
+);
+
+
+CREATE OR REPLACE FUNCTION logtowns() RETURNS TRIGGER AS $example_table$
+BEGIN
+INSERT INTO town_log(name, entry_date) VALUES (new.name, current_timestamp);
+RETURN NEW;
+END;
+$example_table$ LANGUAGE plpgsql;
+
+
+CREATE TRIGGER towns_log_trigger AFTER INSERT ON town
+FOR EACH ROW EXECUTE PROCEDURE logtowns();

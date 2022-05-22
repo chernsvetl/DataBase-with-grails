@@ -1,0 +1,75 @@
+/*  AVG Найти среднюю зарпалату всех работников  */
+
+select avg(salary) from employee;
+
+/* HAVING + GROUP BY Получить список всех сотрудников,
+чья максимальная зарплата превышает 80000, из таблицы сотрудников */
+
+select full_name , max(salary) from employee e  inner join human h on e.human_id_id = h.id
+group by salary, full_name
+having max(salary)>80000
+order by salary desc;
+
+/* Используя подзапрос, перечислить id работников, имеющих зарплату больше, чем работник c id = 413 */
+select  full_name, employee.id, salary from employee inner join human h on employee.human_id_id = h.id
+where salary > (select max(salary) from employee where id = 413);
+
+
+/* OUTER JOIN  вывести всех сотрудников кто проходит медицинский осмотр и кто не проходил */
+
+select  full_name, employee.id, medical_examination  from employee
+left outer join medical_examination  me on employee.id = me.employee_id  inner join human h on employee .human_id_id = h.id
+order by medical_examination ;
+
+
+/* Оконные функции Сравнить различные рейсы по стоимости и найти максимальную цену за билет на рейс */
+select id, flights_id , price, max(price) over (partition by flights_id ) as max_ticket_price
+from ticket
+order by flights_id;
+
+
+/* INNER(3)  вывести работника, который прошел медицинскую проверку 2022-03-18 числа  */
+
+select full_name, medical_examination, is_passed from employee e inner join medical_examination  me on e.id = me.employee_id inner join human h on e.human_id_id = h.id
+where me.is_passed  = 'true' and me.medical_examination  = '2022-03-18';
+
+
+/* C фильтрацией и сортировкой. Вывести количество детей у работников по возрастанию, чьи зарплаты выше 200000 */
+
+select full_name, salary, children_number   from employee  inner join human h on h.ID = employee.human_id_id
+where salary>200000
+order by children_number asc;
+
+
+/* RECURSIVE Найти сумму зарплат работников менее 30000 */
+
+with recursive t(n) as ( values (0)  union all
+select salary from employee e where e.salary < 30000
+)
+select sum(n) from t;
+
+/* Сравнить различные рейсы по стоимости
+Решение: Cross join рейса с самим собой, выбор того что стоит меньше */
+
+
+
+
+
+
+/* cross join очень непрактичный запрос... но с cross join
+select full_name, medical_examination, is_passed from employee
+inner join human on employee.human_id_id = human.id
+cross join medical_examination
+where employee.id = medical_examination.employee_id and
+medical_examination .is_passed = 'true'
+and medical_examination.medical_examination = '2022-03-18';
+
+/* CROSS JOIN найти количество человек, которые проходили медосмотр 2022-03-18 и прошли его успешно */
+select employee_id,medical_examination, is_passed from employee  cross join medical_examination
+where employee.id = medical_examination.employee_id
+and medical_examination .is_passed = 'true'
+and medical_examination.medical_examination = '2022-03-18';
+
+
+
+
