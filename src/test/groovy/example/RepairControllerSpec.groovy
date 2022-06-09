@@ -12,10 +12,7 @@ class RepairControllerSpec extends Specification implements ControllerUnitTest<R
 
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
-        params["startTime"] = '2007-04-29 '
-        params["endTime"] =  '2007-05-29 '
-        params["plane"] = '6'
-      //  assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
     }
 
     void "Test the index action returns the correct model"() {

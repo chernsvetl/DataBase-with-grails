@@ -11,11 +11,8 @@ class DepartmentControllerSpec extends Specification implements ControllerUnitTe
         assert params != null
 
         // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'   headDepartment
-        params["name"] = 'служба летная'
-        params["headDepartment"] = 'Петров Михаил Дмитриевич'
-
-      //  assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        //params["name"] = 'someValidName'
+        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
     }
 
     void "Test the index action returns the correct model"() {

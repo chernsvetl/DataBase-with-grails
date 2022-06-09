@@ -12,13 +12,7 @@ class PlaneControllerSpec extends Specification implements ControllerUnitTest<Pl
 
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
-        params["technicalBrigade"] = ''
-        params["pilotBrigade"] =  ''
-        params["serviceBrigade"] = ''
-        params["startUsingDate"] =  ''
-        params["id"] = '6'
-
-      //  assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
     }
 
     void "Test the index action returns the correct model"() {

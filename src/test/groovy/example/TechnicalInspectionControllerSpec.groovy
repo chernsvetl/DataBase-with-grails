@@ -12,11 +12,7 @@ class TechnicalInspectionControllerSpec extends Specification implements Control
 
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
-        params["plane"] = '6'
-        params["inspectionTime"] = 'null'
-        params["isExecutedInspection"] =  'false'
-
-        //assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
     }
 
     void "Test the index action returns the correct model"() {

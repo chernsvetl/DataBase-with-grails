@@ -12,9 +12,7 @@ class PlaneTypeControllerSpec extends Specification implements ControllerUnitTes
 
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
-        params["planeType"] = 'Airbus A1240'
-
-      //  assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
     }
 
     void "Test the index action returns the correct model"() {

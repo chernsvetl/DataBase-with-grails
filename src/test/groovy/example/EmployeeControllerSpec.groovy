@@ -12,11 +12,7 @@ class EmployeeControllerSpec extends Specification implements ControllerUnitTest
 
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
-        params["humanId"] = '584'
-        params["startWorkExperience"] = '2009-11-11'
-        params["salary"] = '500000'
-
-      //  assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
     }
 
     void "Test the index action returns the correct model"() {

@@ -12,12 +12,7 @@ class MedicalExaminationControllerSpec extends Specification implements Controll
 
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
-
-        params["employee"] = '435'
-        params["medicalExamination"] = '2022-05-05'
-        params["isPassed"] = 'true'
-
-      //  assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
     }
 
     void "Test the index action returns the correct model"() {

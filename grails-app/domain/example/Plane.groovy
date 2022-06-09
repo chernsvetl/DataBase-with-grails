@@ -2,7 +2,7 @@ package example
 
 class Plane {
 
-    static hasMany = [flights:Flight, technicalInspections:TechnicalInspection, repairs:Repair]
+    static hasMany = [flights:Flight, technicalInspections:TechnicalInspection, repair:Repair]
     static belongsTo = [planeType:PlaneType]
 
     Brigade technicalBrigade
@@ -17,11 +17,11 @@ class Plane {
         serviceBrigade nullable: false
         startUsingDate nullable: false
         flights nullable: true
-        repairs nullable: true
         technicalInspections nullable: true
     }
 
-   String toString(){
+    @Override
+    String toString(){
      id
     }
 }

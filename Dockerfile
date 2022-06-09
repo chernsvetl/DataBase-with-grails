@@ -14,14 +14,15 @@ RUN chown -R gradle /home/gradle/src
 RUN gradle build --stacktrace  || return 0
 COPY . .
 RUN gradle clean build
+RUN ls
 
 # actual container
 FROM adoptopenjdk/openjdk11:alpine-jre
-ENV ARTIFACT_NAME=DB-0.0.1-SNAPSHOT.jar
+ENV ARTIFACT_NAME=db-0.0.1.war
 ENV APP_HOME=/usr/app/
 
 WORKDIR $APP_HOME
 COPY --from=TEMP_BUILD_IMAGE $APP_HOME/build/libs/$ARTIFACT_NAME .
 
 EXPOSE 8080
-ENTRYPOINT exec java -jar ${ARTIFACT_NAME}
+ENTRYPOINT exec java -xvf ${ARTIFACT_NAME}

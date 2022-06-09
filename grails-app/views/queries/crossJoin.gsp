@@ -13,10 +13,10 @@
 </div>
 <div>
     <div>
-        <h2>Having</h2>
+        <h2>Cross join</h2>
     </div>
     <form class="form">
-        Вывести сотрудников, у которых зарпалата выше среднего.
+        Вывести работников с зарплатой 250000, которые проходили медосмотр.
     </form>
 
     <div id="list-employee" class="content scaffold-list" role="main">

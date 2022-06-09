@@ -12,11 +12,7 @@ class HumanControllerSpec extends Specification implements ControllerUnitTest<Hu
 
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
-        params["fullName"] = 'Георгией Анатолий Анатольевич'
-        params["birthday"] = '1984-11-11'
-        params["gender"] = 'мужской'
-        params["childrenNumber"] = '4'
-       // assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
     }
 
     void "Test the index action returns the correct model"() {

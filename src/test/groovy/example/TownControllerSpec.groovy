@@ -12,10 +12,7 @@ class TownControllerSpec extends Specification implements ControllerUnitTest<Tow
 
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
-        params["name"] = 'Прага'
-        params["distance"] = '50'
-
-       // assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
     }
 
     void "Test the index action returns the correct model"() {

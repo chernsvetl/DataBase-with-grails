@@ -28,10 +28,6 @@
             <div class="message" role="status">${flash.message}</div>
         </g:if>
         <f:table collection="${results}" />
-
-        <div class="pagination">
-            <g:paginate total="${resultCount ?: 0}" />
-        </div>
     </div>
 </div>
 </body>

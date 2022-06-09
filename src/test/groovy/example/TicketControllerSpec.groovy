@@ -12,13 +12,7 @@ class TicketControllerSpec extends Specification implements ControllerUnitTest<T
 
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
-        params["passenger"]  = 'Луговая Мария Петровна'
-        params["flights"] = '517'
-        params["status"] = 'продан'
-        params["isLuggage"] = 'true'
-        params["price"] = '10000'
-
-       // assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
     }
 
     void "Test the index action returns the correct model"() {

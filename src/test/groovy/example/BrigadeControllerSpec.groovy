@@ -12,11 +12,7 @@ class BrigadeControllerSpec extends Specification implements ControllerUnitTest<
 
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
-        params["name"] = 'pilot-6'
-        params["employee"] = '435'
-        params["department"] = 'служба летная'
-
-     //   assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
     }
 
     void "Test the index action returns the correct model"() {

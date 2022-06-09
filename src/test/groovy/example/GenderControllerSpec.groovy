@@ -12,9 +12,7 @@ class GenderControllerSpec extends Specification implements ControllerUnitTest<G
 
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
-        params["name"] = 'мужской'
-
-      //  assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
     }
 
     void "Test the index action returns the correct model"() {

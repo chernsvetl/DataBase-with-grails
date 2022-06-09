@@ -5,26 +5,19 @@ import grails.testing.web.controllers.ControllerUnitTest
 import grails.validation.ValidationException
 import spock.lang.*
 
-class FlightControllerSpec extends Specification implements ControllerUnitTest<FlightController>, DomainUnitTest<Flight> {
+class TownExampleControllerSpec extends Specification implements ControllerUnitTest<TownExampleController>, DomainUnitTest<TownExample> {
 
     def populateValidParams(params) {
         assert params != null
 
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
-        params["statusFlight"] = 'отправление'
-        params["townId"] = 'Прага'
-        params["flightTime"] = '2021-12-12'
-        params["isCancelled"] = 'false'
-        params["isDepartureAbroad"] = 'true'
-
-
-      //  assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
     }
 
     void "Test the index action returns the correct model"() {
         given:
-        controller.flightService = Mock(FlightService) {
+        controller.townExampleService = Mock(TownExampleService) {
             1 * list(_) >> []
             1 * count() >> 0
         }
@@ -33,8 +26,8 @@ class FlightControllerSpec extends Specification implements ControllerUnitTest<F
         controller.index()
 
         then:"The model is correct"
-        !model.flightList
-        model.flightCount == 0
+        !model.townExampleList
+        model.townExampleCount == 0
     }
 
     void "Test the create action returns the correct model"() {
@@ -42,7 +35,7 @@ class FlightControllerSpec extends Specification implements ControllerUnitTest<F
         controller.create()
 
         then:"The model is correctly created"
-        model.flight!= null
+        model.townExample!= null
     }
 
     void "Test the save action with a null instance"() {
@@ -52,14 +45,14 @@ class FlightControllerSpec extends Specification implements ControllerUnitTest<F
         controller.save(null)
 
         then:"A 404 error is returned"
-        response.redirectedUrl == '/flight/index'
+        response.redirectedUrl == '/townExample/index'
         flash.message != null
     }
 
     void "Test the save action correctly persists"() {
         given:
-        controller.flightService = Mock(FlightService) {
-            1 * save(_ as Flight)
+        controller.townExampleService = Mock(TownExampleService) {
+            1 * save(_ as TownExample)
         }
 
         when:"The save action is executed with a valid instance"
@@ -67,38 +60,38 @@ class FlightControllerSpec extends Specification implements ControllerUnitTest<F
         request.contentType = FORM_CONTENT_TYPE
         request.method = 'POST'
         populateValidParams(params)
-        def flight = new Flight(params)
-        flight.id = 1
+        def townExample = new TownExample(params)
+        townExample.id = 1
 
-        controller.save(flight)
+        controller.save(townExample)
 
         then:"A redirect is issued to the show action"
-        response.redirectedUrl == '/flight/show/1'
+        response.redirectedUrl == '/townExample/show/1'
         controller.flash.message != null
     }
 
     void "Test the save action with an invalid instance"() {
         given:
-        controller.flightService = Mock(FlightService) {
-            1 * save(_ as Flight) >> { Flight flight ->
-                throw new ValidationException("Invalid instance", flight.errors)
+        controller.townExampleService = Mock(TownExampleService) {
+            1 * save(_ as TownExample) >> { TownExample townExample ->
+                throw new ValidationException("Invalid instance", townExample.errors)
             }
         }
 
         when:"The save action is executed with an invalid instance"
         request.contentType = FORM_CONTENT_TYPE
         request.method = 'POST'
-        def flight = new Flight()
-        controller.save(flight)
+        def townExample = new TownExample()
+        controller.save(townExample)
 
         then:"The create view is rendered again with the correct model"
-        model.flight != null
+        model.townExample != null
         view == 'create'
     }
 
     void "Test the show action with a null id"() {
         given:
-        controller.flightService = Mock(FlightService) {
+        controller.townExampleService = Mock(TownExampleService) {
             1 * get(null) >> null
         }
 
@@ -111,20 +104,20 @@ class FlightControllerSpec extends Specification implements ControllerUnitTest<F
 
     void "Test the show action with a valid id"() {
         given:
-        controller.flightService = Mock(FlightService) {
-            1 * get(2) >> new Flight()
+        controller.townExampleService = Mock(TownExampleService) {
+            1 * get(2) >> new TownExample()
         }
 
         when:"A domain instance is passed to the show action"
         controller.show(2)
 
         then:"A model is populated containing the domain instance"
-        model.flight instanceof Flight
+        model.townExample instanceof TownExample
     }
 
     void "Test the edit action with a null id"() {
         given:
-        controller.flightService = Mock(FlightService) {
+        controller.townExampleService = Mock(TownExampleService) {
             1 * get(null) >> null
         }
 
@@ -137,15 +130,15 @@ class FlightControllerSpec extends Specification implements ControllerUnitTest<F
 
     void "Test the edit action with a valid id"() {
         given:
-        controller.flightService = Mock(FlightService) {
-            1 * get(2) >> new Flight()
+        controller.townExampleService = Mock(TownExampleService) {
+            1 * get(2) >> new TownExample()
         }
 
         when:"A domain instance is passed to the show action"
         controller.edit(2)
 
         then:"A model is populated containing the domain instance"
-        model.flight instanceof Flight
+        model.townExample instanceof TownExample
     }
 
 
@@ -156,14 +149,14 @@ class FlightControllerSpec extends Specification implements ControllerUnitTest<F
         controller.update(null)
 
         then:"A 404 error is returned"
-        response.redirectedUrl == '/flight/index'
+        response.redirectedUrl == '/townExample/index'
         flash.message != null
     }
 
     void "Test the update action correctly persists"() {
         given:
-        controller.flightService = Mock(FlightService) {
-            1 * save(_ as Flight)
+        controller.townExampleService = Mock(TownExampleService) {
+            1 * save(_ as TownExample)
         }
 
         when:"The save action is executed with a valid instance"
@@ -171,31 +164,31 @@ class FlightControllerSpec extends Specification implements ControllerUnitTest<F
         request.contentType = FORM_CONTENT_TYPE
         request.method = 'PUT'
         populateValidParams(params)
-        def flight = new Flight(params)
-        flight.id = 1
+        def townExample = new TownExample(params)
+        townExample.id = 1
 
-        controller.update(flight)
+        controller.update(townExample)
 
         then:"A redirect is issued to the show action"
-        response.redirectedUrl == '/flight/show/1'
+        response.redirectedUrl == '/townExample/show/1'
         controller.flash.message != null
     }
 
     void "Test the update action with an invalid instance"() {
         given:
-        controller.flightService = Mock(FlightService) {
-            1 * save(_ as Flight) >> { Flight flight ->
-                throw new ValidationException("Invalid instance", flight.errors)
+        controller.townExampleService = Mock(TownExampleService) {
+            1 * save(_ as TownExample) >> { TownExample townExample ->
+                throw new ValidationException("Invalid instance", townExample.errors)
             }
         }
 
         when:"The save action is executed with an invalid instance"
         request.contentType = FORM_CONTENT_TYPE
         request.method = 'PUT'
-        controller.update(new Flight())
+        controller.update(new TownExample())
 
         then:"The edit view is rendered again with the correct model"
-        model.flight != null
+        model.townExample != null
         view == 'edit'
     }
 
@@ -206,13 +199,13 @@ class FlightControllerSpec extends Specification implements ControllerUnitTest<F
         controller.delete(null)
 
         then:"A 404 is returned"
-        response.redirectedUrl == '/flight/index'
+        response.redirectedUrl == '/townExample/index'
         flash.message != null
     }
 
     void "Test the delete action with an instance"() {
         given:
-        controller.flightService = Mock(FlightService) {
+        controller.townExampleService = Mock(TownExampleService) {
             1 * delete(2)
         }
 
@@ -222,7 +215,7 @@ class FlightControllerSpec extends Specification implements ControllerUnitTest<F
         controller.delete(2)
 
         then:"The user is redirected to index"
-        response.redirectedUrl == '/flight/index'
+        response.redirectedUrl == '/townExample/index'
         flash.message != null
     }
 }

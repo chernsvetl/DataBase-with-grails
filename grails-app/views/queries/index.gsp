@@ -38,13 +38,13 @@
             <a class="fieldcontain required" href="windowFunc">Запрос с Window function</a>
         </div>
         <div>
-            <a class="fieldcontain required" href="recursive">Запрос рекурсивный</a>
-        </div>
-        <div>
-            <a class="fieldcontain required" href="filter">Фильтр</a>
-        </div>
-        <div>
             <a class="fieldcontain required" href="crossJoin">Cross Join</a>
+        </div>
+        <div>
+            <a class="fieldcontain required" href="lateralJoin">Lateral Join</a>
+        </div>
+        <div>
+            <a class="fieldcontain required" href="filtering">Фильтрация по нескольким полям</a>
         </div>
     </div>
 </div>

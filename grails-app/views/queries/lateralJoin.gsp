@@ -13,10 +13,10 @@
 </div>
 <div>
     <div>
-        <h2>Recursive</h2>
+        <h2>Lateral join</h2>
     </div>
     <form class="form">
-        Найти сумму зарплат работников менее 30000.
+        Вывести время первого ремонта самолета, идентификатор и время следующего ремонта, если таковые имеются.
     </form>
 
     <div id="list-employee" class="content scaffold-list" role="main">
@@ -26,11 +26,18 @@
         </g:if>
         <table>
             <tr>
-                <td>Sum</td>
+                <td>Plane Id</td>
+                <td>First repair time</td>
+                <td>Next repair time</td>
+                <td>Next repair Id</td>
+
             </tr>
             <g:each in="${results}" var="result">
                 <tr>
-                    <td>${result}</td>
+                    <td>${result.getV4()}</td>
+                    <td>${result.getV2()}</td>
+                    <td>${result.getV3()}</td>
+                    <td>${result.getV1()}</td>
                 </tr>
             </g:each>
         </table>

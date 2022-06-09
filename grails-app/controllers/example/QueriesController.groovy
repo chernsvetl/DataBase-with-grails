@@ -12,6 +12,38 @@ class QueriesController {
     def index() {
     }
 
+    def filtering = {
+        params.from = params.from ?: 0
+        params.to = params.to ?: 100000
+
+
+        String name = params.name as String
+        String country = params.country as String
+        Integer from = params.from as Integer ?: 0
+        Integer to = params.to as Integer ?: 100000
+
+        def results
+        if (name == null && country == null) {
+            results = TownExample.findAll()
+        } else if (name == "" && country == "") {
+            results = TownExample.findAllByDistanceBetween(from, to)
+        } else if (name != "" && country == "") {
+            results = TownExample.findAllByNameAndDistanceBetween(name, from, to)
+        } else if (name == "" && country != "") {
+            results = TownExample.findAllByCountryAndDistanceBetween(country, from, to)
+        } else if (name != "" && country != "") {
+            results = TownExample.findAllByNameAndCountryAndDistanceBetween(name, country, from, to)
+        }
+        //print(results)
+
+        render(view: 'filtering', model: [
+                results: results,
+                resultCount: results.size()])
+
+    }
+
+
+
     /* Вывести города, расстояние до которых больше (число). */
     def filteringAndSorting = {
         params.distanceFrom = params.distanceFrom ?: 0
@@ -155,8 +187,8 @@ class QueriesController {
     }
 
     def crossJoin = {
-        def queryString = " select employee_id as eid ,medical_examination from employee  cross join medical_examination \n" +
-                "        where employee.id = medical_examination.employee_id ";
+        def queryString = " select employee_id as eid ,medical_examination from employee cross join medical_examination " +
+                "        where employee.id = medical_examination.employee_id  and salary = '250000' ";
         def sql = new Sql(dataSource as DataSource)
         List<Employee> results = new ArrayList<Employee>()
         sql.rows(queryString).each {
@@ -167,6 +199,32 @@ class QueriesController {
         render(view: 'crossJoin',
                 model: [results: results, resultCount: results.size()])
 
+    }
+
+
+    /* https://medium.com/kkempin/postgresqls-lateral-join-bfd6bd0199df */
+    def lateralJoin = {
+
+        def queryString = " select  id as tid, plane_id, first_repair_time, next_repair_time, id from " +
+                "  (select plane_id, min(start_time ) as first_repair_time from repair group by plane_id) o1 " +
+                "  left join lateral " +
+                "  (select id, start_time as next_repair_time " +
+                "   from repair " +
+                "   where plane_id = o1.plane_id and start_time  > o1.first_repair_time " +
+                "   order by start_time asc limit 1) " +
+                "   o2 on true; "
+
+        def sql = new Sql(dataSource as DataSource)
+        List<Tuple4<Repair, Date, Date, Long>> results = new ArrayList<Tuple4<Repair, Date, Date, Long>>()
+        sql.rows(queryString).each {
+            results.add(new Tuple4<Repair, Date, Date, Long>(
+                    Repair.findById((Long) it.get("tid") as Long, null) as Repair,
+                    (Date) it.get("first_repair_time"), (Date) it.get("next_repair_time"), (Long) it.get("plane_id")
+            ));
+            //print(it)
+        }
+        render(view: 'lateralJoin',
+                model: [results: results, resultCount: results.size()])
     }
 
 }
